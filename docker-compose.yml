@@ -1,0 +1,22 @@
+services:
+
+  juegos-datos:
+    image: postgres:16
+    container_name: juegos-datos
+    environment:
+      POSTGRES_DB:       juegos
+      POSTGRES_USER:     juegos_user
+      POSTGRES_PASSWORD: juegos_pass
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+    networks:
+      - juegos-network
+
+networks:
+  juegos-network:
+    name: juegos-network
+    driver: bridge
