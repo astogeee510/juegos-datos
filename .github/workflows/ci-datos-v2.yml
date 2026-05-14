@@ -96,7 +96,7 @@ jobs:
         id: get-instance
         run: |
           EC2_DATOS=$(aws ssm get-parameter \
-            --name "/juegos/ec2/datos" \
+            --name "/alumnos/ec2/datos" \
             --query "Parameter.Value" \
             --output text)
           echo "instance_id=$EC2_DATOS" >> $GITHUB_OUTPUT
