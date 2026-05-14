@@ -6,7 +6,7 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  IMAGE_NAME: juegos-datos
+  IMAGE_NAME: alumnos-datos
 
 permissions:
   contents: write
